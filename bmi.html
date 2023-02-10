@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	body{
+         margin: 0;
+         padding: 0;
+         background: linear-gradient( to bottom right,deepskyblue,powderblue,deepskyblue);
+			background-repeat: no-repeat;
+			text-align: center;
+         height: 100vh;
+        }
+        div{
+        	width: 500px;
+        	height: 400px;
+        	top: 50%;
+        	left: 50%;
+        	position: absolute;
+        	transform: translate(-50%,-50%);
+        	padding: 5px;
+        	background-color:lightseagreen;
+        	 text-align: center;
+        }
+        h2{
+        	text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			word-spacing: 0.5rem;
+			color: black;
+			margin: 0.2rem 0 0.5rem 0;
+			font-weight: 500;
+			font-size: 2.5rem;
+			text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+        }
+        #button{
+        	/*background:gray ;*/
+        	color: lightseagreen;
+        	border: none;
+        	border-radius: 10px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+
+        }
+        #button:hover{
+        	box-shadow: 1px 1px 10px black;
+        }
+        #height,#weight{
+
+        	background-color: transparent;
+        	border-radius: 2px;
+        	border: 1px,solid white;
+            outline: none;
+        }
+        #result{
+        	color: white;
+        }	
+        
+	</style>
+</head>
+<body>
+<div>
+    <h2>BMI Calculator</h2>
+    <p class="txt">Height</p>
+    <input type="text" id="height">
+    <p class="calsi">Weight</p>
+    <input type="text" id="weight">
+    <p id="result"></p>
+    <button id="button" onClick="bmi()">Calculate</button>
+    <p id="info">Please enter height (cm) and weight (kg)</p>
+</div>
+<script type="text/javascript">
+	function bmi(){
+	var h=document.getElementById('height').value;
+	var w=document.getElementById('weight').value;
+	var bmi= w / (((h/100 )* h) /100);
+	var total=bmi.toFixed(2);
+	document.getElementById('result').innerHTML="Your BMI is" + total;
+    }
+</script>
+</body>
+</html>
